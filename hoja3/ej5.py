@@ -1,5 +1,6 @@
 #%%
 # 1_numPy/playNumPy.py   reproductor con Chunks
+import chunk
 from copy import copy
 import pyaudio, kbhit
 
@@ -22,21 +23,25 @@ p = pyaudio.PyAudio()
 
 CHUNK = 1024
 stream = p.open(format=p.get_format_from_width(getWidthData(data)),
-                channels=len(data.shape),
+                channels=2,
                 rate=SRATE,
                 frames_per_buffer=CHUNK,
                 output=True)
 
+def modOscChuck(frec, vol):
+    global numBloque # var global
+    data = vol * np.sin(2 * np.pi * (np.arange(0, CHUNK, dtype = np.float32) + (numBloque * CHUNK)) * frec / SRATE)
+    return data
+
 multiplier = 1  # Esto es para que no sea demasiado brusco, con suavizado
-def normalize(bloque):
-    maxValue = np.max(np.abs(bloque))
-    global multiplier
-    newMultiplier = 1.0 / maxValue
-    if(np.abs(newMultiplier - multiplier) > 0.5):
-        multiplier += ((newMultiplier - multiplier) / np.abs(newMultiplier - multiplier)) * 0.5
-    else:
-        multiplier = newMultiplier
-    bloque *= multiplier
+def balance(bloque):
+    oscilador = modOscChuck(5.0, 1.0)
+    izq = np.copy(bloque)
+    der = np.copy(bloque)
+    for i in np.arange(np.shape(bloque)[0]):
+        der[i] *= ((oscilador[i]/-2.0) + 0.5)
+        izq[i] *= ((oscilador[i]/2.0) + 0.5)
+    bloque = np.hstack((der.reshape(-1, 1), izq.reshape(-1,1)))
     return bloque
 
 # En data tenemos el wav completo, ahora procesamos por bloques (chunks)
@@ -48,7 +53,7 @@ while len(bloque>0) and c!= 'q':
     # nuevo bloque
     bloque = data[ numBloque*CHUNK : numBloque*CHUNK+CHUNK ] 
     if(np.shape(bloque)[0] > 0):
-        bloque = normalize(bloque)
+        bloque = balance(bloque)
 
     # pasamos al stream  haciendo conversion de tipo 
     stream.write(bloque.astype(data.dtype).tobytes())
