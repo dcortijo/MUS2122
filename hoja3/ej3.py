@@ -11,6 +11,8 @@ SRATE = 44100
 CHUNK = 2048
 FREC = 440.0
 VOL = 1.0
+MFREC = 2.0
+MVOL = 1.0
 
 # generadores/oscDinamico2.py
 # corregido
@@ -39,6 +41,14 @@ def sawChuck(frec,vol):
     last += CHUNK # actualizamos ultimo generado
     return data
 
+def modOscChuck(frec, vol):
+    global last # var global
+    data = vol * np.sin(2 * np.pi * (np.arange(0, CHUNK, dtype = np.float32) + last) * frec / SRATE)
+    return data
+
+def moduladorAmplitud(wave, frec, vol):
+    return wave * ((modOscChuck(frec, vol) / 2.0) + 0.5) # De 0 a 1
+
 data = oscChuck(FREC, VOL)
 
 # arrancamos pyAudio
@@ -59,7 +69,8 @@ kb = kbhit.KBHit()
 c= ' '
 while len(bloque>0) and c!= 'q': 
     # nuevo bloque
-    bloque = triChuck(FREC, VOL)    
+    bloque = oscChuck(FREC, VOL)    
+    bloque = moduladorAmplitud(bloque, MFREC, MVOL)
 
     # pasamos al stream  haciendo conversion de tipo 
     stream.write(bloque.astype(data.dtype).tobytes())
