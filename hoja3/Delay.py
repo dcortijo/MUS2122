@@ -2,19 +2,23 @@ import numpy as np         # arrays
 
 class Delay:
     def __init__(self, chunk, srate, channelnum, initalsilence): 
-        self.chunkSize = chunk   # tamanio de bloque
         self.samplerate = srate # sample rate
-        self.buffer = np.zeros((int(initalsilence * srate), channelnum), dtype="float32")    # Crea un silencio inicial con un numero de canales por parametro
-        self.numBloque = 0  # por que chunk
+        self.buffer = np.zeros(int(initalsilence * srate))    # Crea un silencio inicial con un numero de canales por parametro
+        self.start = 0  # por que chunk empieza ahora
 
     def addChunk(self, chunk):
-        self.buffer = np.append(self.buffer, chunk)
+        chunkSize = np.shape(chunk)[0]
+        buffSize = np.shape(self.buffer)[0]
+        firstSize = np.min([buffSize - self.start, chunkSize])
+        secondSize = chunkSize - firstSize
 
-    def retrieveChunk(self):
-        # if((self.numBloque + 1) * self.chunkSize > np.shape(self.buffer)[0]):
-        #     chunk = self.buffer[ self.numBloque * self.chunkSize : np.shape(self.buffer)[0] - self.numBloque * self.chunkSize ] # si no es un bloque entero ?
-        # else:                                                                                                                   # esto esta bien o es necesario ?
-        #    chunk = self.buffer[ self.numBloque * self.chunkSize : (self.numBloque + 1) * self.chunkSize ]  # si puede coger un bloque entero 
-        chunk = self.buffer[ self.numBloque * self.chunkSize : (self.numBloque + 1) * self.chunkSize ] 
-        self.numBloque = self.numBloque + 1
-        return chunk
+        returnChunk = np.copy(self.buffer[ self.start  : self.start + firstSize ])
+        self.buffer[ self.start  : self.start + firstSize ] = chunk[ 0 : firstSize]
+        self.start = (self.start + firstSize) % buffSize
+
+        if secondSize > 0:
+            returnChunk = np.append(returnChunk, np.copy(self.buffer[ self.start  : self.start + secondSize ]))
+            self.buffer[ self.start  : self.start + secondSize ] = chunk[ firstSize : ]
+            self.start = (self.start + secondSize) % buffSize
+
+        return returnChunk
