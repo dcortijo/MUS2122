@@ -19,15 +19,15 @@ def osc(frec, dur, vol):
     return vol * np.sin(2*np.pi*np.arange(nSamples)*frec/SRATE)
 
 data = osc(440, OSCDUR, VOL)
-np.reshape(data, newshape=(np.shape(osc)[0], CHANNELS))
+data = np.reshape(data, newshape=(np.shape(data)[0], CHANNELS))
 
-delayed = Delay(SRATE, data.ndim, DELAY)
+delayed = Delay(SRATE, CHANNELS, DELAY)
 
 # abrimos stream de salida
 stream = sd.OutputStream(
     samplerate = SRATE,            # frec muestreo 
     blocksize  = CHUNK,            # tamanio del bloque (muy recomendable unificarlo en todo el programa)
-    channels   = len(data.shape))  # num de canales
+    channels   = CHANNELS)  # num de canales
 
 # arrancamos stream
 stream.start()
@@ -45,7 +45,7 @@ print('\n\nProcessing chunks: ',end='')
 # termina con 'q' o cuando el ultimo bloque ha quedado incompleto (menos de CHUNK samples)
 while c!= 'q' and nSamples==CHUNK: 
     # nuevo bloque
-    bloque = data[numBloque*CHUNK : numBloque*CHUNK+nSamples ]
+    bloque = data[numBloque*CHUNK : numBloque*CHUNK+nSamples]
     bloque *= vol
 
     delayedBlock = delayed.addChunk(bloque)
