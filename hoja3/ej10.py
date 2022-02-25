@@ -7,10 +7,10 @@ import kbhit               # para lectura de teclas no bloqueante
 
 CHUNK = 1024    # tamaño de bloque
 SRATE = 44100   # sapling rate
-DELAY = 5       # segundos de retardo
+DELAY = 0.5       # segundos de retardo
 CHANNELS = 1    # canales en delay y los streams
 
-delayed = Delay(CHUNK, SRATE, CHANNELS, DELAY)
+delayed = Delay(SRATE, CHANNELS, DELAY)
 
 # abrimos stream de salida
 outputStream = sd.OutputStream(
@@ -30,8 +30,6 @@ inputStream.start()
 # En data tenemos el wav completo, ahora procesamos por bloques (chunks)
 kb = kbhit.KBHit()
 c= ' '
-
-print('\n\nProcessing chunks: ',end='')
 
 # termina con 'q' o cuando el ultimo bloque ha quedado incompleto (menos de CHUNK samples)
 while c!= 'q': 

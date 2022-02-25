@@ -1,9 +1,9 @@
 import numpy as np         # arrays    
 
 class Delay:
-    def __init__(self, chunk, srate, channelnum, initalsilence): 
+    def __init__(self, srate, channelnum, initalsilence): 
         self.samplerate = srate # sample rate
-        self.buffer = np.zeros(int(initalsilence * srate))    # Crea un silencio inicial con un numero de canales por parametro
+        self.buffer = np.zeros(shape=(int(initalsilence * srate), channelnum) )   # Crea un silencio inicial con un numero de canales por parametro
         self.start = 0  # por que chunk empieza ahora
 
     def addChunk(self, chunk):

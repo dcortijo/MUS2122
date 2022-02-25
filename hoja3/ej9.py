@@ -2,7 +2,7 @@
 
 from Delay import Delay
 import numpy as np         # arrays    
-import sounddevice as sd   # modulo de conexion con portAudio
+import sounddevice as sd
 import kbhit               # para lectura de teclas no bloqueante
 
 CHUNK = 1024
@@ -10,6 +10,7 @@ SRATE = 44100
 VOL = 1.0
 DELAY = 1
 OSCDUR = 3
+CHANNELS = 1
 
 # devuelve una senial sinusoidal con frecuencia frec, duracion dur y volumen vol
 def osc(frec, dur, vol):
@@ -18,8 +19,9 @@ def osc(frec, dur, vol):
     return vol * np.sin(2*np.pi*np.arange(nSamples)*frec/SRATE)
 
 data = osc(440, OSCDUR, VOL)
+np.reshape(data, newshape=(np.shape(osc)[0], CHANNELS))
 
-delayed = Delay(CHUNK, SRATE, data.ndim, DELAY)
+delayed = Delay(SRATE, data.ndim, DELAY)
 
 # abrimos stream de salida
 stream = sd.OutputStream(
