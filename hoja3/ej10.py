@@ -7,7 +7,7 @@ import kbhit               # para lectura de teclas no bloqueante
 
 CHUNK = 1024    # tamaño de bloque
 SRATE = 44100   # sapling rate
-DELAY = 2       # segundos de retardo
+DELAY = 0.1     # segundos de retardo
 CHANNELS = 1    # canales en delay y los streams
 
 delayed = Delay(SRATE, CHANNELS, DELAY)

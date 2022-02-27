@@ -9,7 +9,7 @@ import kbhit               # para lectura de teclas no bloqueante
 CHUNK = 1024
 SRATE = 44100.0
 VOL = 1.0
-SECS_PER_UNIT = 0.5 # para la lectura de archivo
+SECS_PER_UNIT = 0.5 # para establñecer segundos/negra
 
 # devuelve una senial sinusoidal con frecuencia frec, duracion dur y volumen vol
 def osc(frec, dur, vol):
@@ -23,15 +23,16 @@ def parsePartitura(data, partitura):
     for tup in partitura:
         note = tup[0]
         dur = tup[1]
-        data = np.append(data, osc(notas[note], dur * 0.95, VOL))
-        # silencio entre cada nota para separarlas
-        data = np.append(data, osc(notas[note], dur * 0.05, 0.0)) 
+        data = np.append(data, osc(notas[note], dur * SECS_PER_UNIT * 0.95, VOL))
+        # forzamos un pequeño silencio entre cada nota para separarlas
+        data = np.append(data, osc(notas[note], dur * SECS_PER_UNIT * 0.05, 0.0)) 
     return data
 
-
+# Frecuencias de notas
 notas = {"C":523.251, "D":587.33, "E":659.255, "F":698.456, "G":789.991, "a":880, "b":987.767,
         "c":523.251*2, "d":587.33*2, "e":659.255*2, "f":698.456*2, "g":789.991*2, "a'":880*2, "b'":987.767*2 }
 
+# Partitura hardcoded
 partitura = [("G", 0.5),("G", 0.5),("a", 1.0),("G", 1.0),
             ("c", 1.0),("b", 2.0),
             ("G", 0.5),("G", 0.5),("a", 1.0),("G", 1.0),
@@ -41,9 +42,8 @@ partitura = [("G", 0.5),("G", 0.5),("a", 1.0),("G", 1.0),
             ("f", 0.5),("f", 0.5),("e", 1.0),("c", 1.0),
             ("d", 1.0),("c", 2.0)]
 
-data = np.empty((0, 1), dtype="float32")
+data = np.empty((0, 1))
 data = parsePartitura(data, partitura)
-data = ft.toFloat32(data)
 
 # abrimos stream de salida
 stream = sd.OutputStream(
@@ -72,7 +72,7 @@ while c!= 'q' and nSamples==CHUNK:
     bloque *= vol
 
     # lo pasamos al stream
-    stream.write(bloque) # escribimos al stream
+    stream.write(np.float32(bloque)) # escribimos al stream
 
     # entrada por teclado
     if kb.kbhit():
