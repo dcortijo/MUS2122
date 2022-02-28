@@ -9,7 +9,7 @@ import kbhit               # para lectura de teclas no bloqueante
 CHUNK = 1024
 SRATE = 44100.0
 VOL = 1.0
-SECS_PER_UNIT = 0.5 # para establñecer segundos/negra
+SECS_PER_UNIT = 1.0 # para establñecer segundos/negra
 
 # devuelve una senial sinusoidal con frecuencia frec, duracion dur y volumen vol
 def osc(frec, dur, vol):
