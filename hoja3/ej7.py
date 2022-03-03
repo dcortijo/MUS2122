@@ -1,5 +1,5 @@
 # EJ 7: HAPPY BIRTHDAY (sin parte opcional)
-
+# Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 from ast import parse
 import numpy as np         # arrays    
 import sounddevice as sd   # modulo de conexion con portAudio

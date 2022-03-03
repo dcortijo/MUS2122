@@ -1,5 +1,5 @@
-# sintesis fm con multiples moduladores
-
+# EJ5: PIANO POLIFÓNICO
+# 
 import pyaudio, kbhit, os
 import numpy as np
 # creacion de una ventana de pygame

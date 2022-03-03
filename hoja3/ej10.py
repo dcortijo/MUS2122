@@ -1,5 +1,5 @@
 # EJ 10: IDIOTIZADOR
-
+# Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 from Delay import Delay
 import numpy as np         # arrays    
 import sounddevice as sd   # modulo de conexion con portAudio

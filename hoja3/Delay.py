@@ -1,4 +1,5 @@
 # EJ 9: DELAY
+# Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 import numpy as np         # arrays    
 
 class Delay:
