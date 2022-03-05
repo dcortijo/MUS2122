@@ -1,4 +1,4 @@
-# EJ5: PIANO POLIFÓNICO
+# EJ6: SAMPLER
 # Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 
 import kbhit, os

@@ -5,7 +5,7 @@ import sounddevice as sd   # modulo de conexión con portAudio
 import soundfile as sf     # para lectura/escritura de wavs
 import kbhit               # para lectura de teclas no bloqueante
 
-CHUNK = 1024
+CHUNK = 2048
 
 
 '''
@@ -16,7 +16,10 @@ if len(sys.argv) < 2:
 
 # leemos wav en array numpy (data)
 # por defecto lee float64, pero podemos hacer directamente la conversion a float32
-data, SRATE = sf.read('rec.wav',dtype="float32")
+data, SRATE = sf.read('piano.wav',dtype="float32")
+
+if len(data.shape) == 1:
+    data = np.reshape(data, newshape=(data.shape[0], 1))
 
 # info del wav
 print("SRATE: {}   Format: {}   Channels: {}    Len: {}".
@@ -49,9 +52,8 @@ def callback(outdata, frames, time, status):
     # actualizamos current_frame con los frames procesados    
     current_frame += chunksize
 
-
 # stream de salida con callBack
-stream = sd.OutputStream(samplerate=SRATE, channels=data.shape[1],
+stream = sd.OutputStream(samplerate=SRATE, channels=len(data.shape),
     callback=callback, blocksize=CHUNK)
 
 # arrancamos stream

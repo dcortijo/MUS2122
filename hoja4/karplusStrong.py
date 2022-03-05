@@ -1,12 +1,12 @@
 # karplus strong
 # http://www-cs-students.stanford.edu/~blynn/sound/karplusstrong.html
 
-import pyaudio, kbhit, os
+#import pyaudio, kbhit, os
 import numpy as np
 
 import matplotlib.pyplot as plt
 
-p = pyaudio.PyAudio()
+#p = pyaudio.PyAudio()
 
 RATE = 44100       # sampling rate, Hz, must be integer
 CHUNK = 1024
@@ -42,49 +42,49 @@ def synthWaveTable(wavetable, frame):
     return samples
 
 
-stream = p.open(format=pyaudio.paFloat32,
-                channels=1,
-                rate=RATE,
-                output=True)
+# stream = p.open(format=pyaudio.paFloat32,
+#                 channels=1,
+#                 rate=RATE,
+#                 output=True)
 
 
-kb = kbhit.KBHit()
-c = ' '
+# kb = kbhit.KBHit()
+# c = ' '
 
-vol = 0.8
-frame = 0
+# vol = 0.8
+# frame = 0
 
-frec = 440
-
-
-# tabla con seno puro
-# waveTable = np.sin(2*np.pi*frec*np.arange(RATE/frec,dtype=np.float32)/RATE) 
-
-# tabla con ruido
-size = CHUNK//2  # variar size
+# frec = 440
 
 
-# varias notas
-waveTable = (2 * np.random.randint(0, 2, size) - 1).astype(np.float32)
-stream.write(karplus_strong(waveTable,1*RATE).tobytes())
+# # tabla con seno puro
+# # waveTable = np.sin(2*np.pi*frec*np.arange(RATE/frec,dtype=np.float32)/RATE) 
 
-waveTable = (2 * np.random.randint(0, 2, size//2) - 1).astype(np.float32)
-stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
-
-waveTable = (2 * np.random.randint(0, 2, size//4) - 1).astype(np.float32)
-stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
-
-waveTable = (2 * np.random.randint(0, 2, size//16) - 1).astype(np.float32)
-stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
-
-# escala diatónica
-escala = [(2 * np.random.randint(0, 2, int(size/2**(k/12))) - 1).astype(np.float32) for k in range(24)]
-
-for i in [0,2,4,5,7,9,11,12]:
-    stream.write(karplus_strong(escala[i], 0.3*RATE).tobytes()) 
+# # tabla con ruido
+# size = CHUNK//2  # variar size
 
 
-stream.stop_stream()
-stream.close()
+# # varias notas
+# waveTable = (2 * np.random.randint(0, 2, size) - 1).astype(np.float32)
+# stream.write(karplus_strong(waveTable,1*RATE).tobytes())
 
-p.terminate()
+# waveTable = (2 * np.random.randint(0, 2, size//2) - 1).astype(np.float32)
+# stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
+
+# waveTable = (2 * np.random.randint(0, 2, size//4) - 1).astype(np.float32)
+# stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
+
+# waveTable = (2 * np.random.randint(0, 2, size//16) - 1).astype(np.float32)
+# stream.write(karplus_strong(waveTable, 1*RATE).tobytes()) 
+
+# # escala diatónica
+# escala = [(2 * np.random.randint(0, 2, int(size/2**(k/12))) - 1).astype(np.float32) for k in range(24)]
+
+# for i in [0,2,4,5,7,9,11,12]:
+#     stream.write(karplus_strong(escala[i], 0.3*RATE).tobytes()) 
+
+
+# stream.stop_stream()
+# stream.close()
+
+# p.terminate()
