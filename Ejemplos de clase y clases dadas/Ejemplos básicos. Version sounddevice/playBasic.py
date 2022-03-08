@@ -6,7 +6,7 @@ import soundfile as sf     # para lectura/escritura de wavs
 
 # leemos wav en array numpy (data)
 # por defecto lee en formato dtype="float64". No hay problema para reproducción simple (hace conversiones internas)
-data, SRATE = sf.read('rec.wav')
+data, SRATE = sf.read('ex1.wav')
 
 
 # informacion de wav

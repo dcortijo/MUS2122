@@ -9,7 +9,7 @@ CHUNK = 1024
 
 # leemos wav en array numpy (data)
 # por defecto lee float64, pero podemos hacer directamente la conversion a float32
-data, SRATE = sf.read('rec.wav',dtype="float32")
+data, SRATE = sf.read('ex1.wav',dtype="float32")
 
 
 # informacion de wav

@@ -14,7 +14,7 @@ sd.default.device = dev
 print("\n\nUsing output: ",devs[sd.default.device[0]]['name'])
 
 # abrimos wav y recogemos frecMuestreo (SRATE) y el array de muestras
-data, SRATE = sf.read('rec.wav')
+data, SRATE = sf.read('ex1.wav')
 
 
 # informacion de wav

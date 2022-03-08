@@ -5,7 +5,7 @@ import sounddevice as sd   # modulo de conexión con portAudio
 import soundfile as sf     # para lectura/escritura de wavs
 import kbhit               # para lectura de teclas no bloqueante
 
-CHUNK = 2048
+CHUNK = 1024
 
 
 '''
@@ -17,7 +17,6 @@ if len(sys.argv) < 2:
 # leemos wav en array numpy (data)
 # por defecto lee float64, pero podemos hacer directamente la conversion a float32
 data, SRATE = sf.read('piano.wav',dtype="float32")
-
 if len(data.shape) == 1:
     data = np.reshape(data, newshape=(data.shape[0], 1))
 
@@ -30,16 +29,16 @@ print("SRATE: {}   Format: {}   Channels: {}    Len: {}".
 current_frame = 0
 def callback(outdata, frames, time, status):
     global current_frame       # para actualizarlo en cada callBack
-    if status: print(status)
-    print("Bloque: ",current_frame//CHUNK, outdata.dtype, len(outdata))  # num bloque
+    # if status: print(status)
+    # print("Bloque: ",current_frame//CHUNK, outdata.dtype, len(outdata))  # num bloque
 
     # vemos si podemos coger un CHUNK entero o lo que quede en 
     chunksize = min(len(data) - current_frame, frames)  
     
     # escribimos en outdata los samples correspondientes
-    outdata[:chunksize] = data[current_frame:current_frame + chunksize]    
+    outdata[:chunksize] = np.float32(data[current_frame:current_frame + chunksize])    
     # es una forma compacta de hacer:
-    # for i in range(chunksize): outdata[i] = data[current_frame+i]
+    # for i in range(chunksize): outdata[i] = d ata[current_frame+i]
 
     # NO funcionaría hacer outdata = data[current_frame:current_frame + chunksize]
     # porque asignaría (compartiría) referencias (objetos array de numpy)
@@ -51,6 +50,7 @@ def callback(outdata, frames, time, status):
 
     # actualizamos current_frame con los frames procesados    
     current_frame += chunksize
+
 
 # stream de salida con callBack
 stream = sd.OutputStream(samplerate=SRATE, channels=len(data.shape),

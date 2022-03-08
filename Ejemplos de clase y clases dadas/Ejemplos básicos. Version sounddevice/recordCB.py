@@ -4,7 +4,7 @@ import sounddevice as sd   # modulo de conexión con portAudio
 import soundfile as sf     # para lectura/escritura de wavs
 import kbhit               # para lectura de teclas no bloqueante
 
-CHUNK = 2048
+CHUNK = 1024
 CHANNELS = 1
 SRATE = 44100
 
