@@ -2,45 +2,55 @@
 # Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 
 import kbhit, os
-from karplusStrong import karplus_strong
 import sounddevice as sd   # modulo de conexion con portAudio
 import numpy as np
+from Nota import Nota
 
 RATE = 44100       # sampling rate, Hz, must be integer
 CHUNK = 1024
-STREAMS = 10
 
 # abrimos stream de salida
-streams = np.empty(0)
-for i in np.arange(STREAMS):
-    streams = np.append(streams, 
-    sd.OutputStream(
-    samplerate = RATE,            # frec muestreo 
-    blocksize  = CHUNK,           # tamanio del bloque (muy recomendable unificarlo en todo el programa)
-    channels   = 1))  # num de canales
+stream = sd.OutputStream(
+    samplerate = RATE,  # frec muestreo 
+    blocksize  = CHUNK, # tamanio del bloque (muy recomendable unificarlo en todo el programa)
+    channels   = 1)     # num de canales
 
 # arrancamos streams
-for i in np.arange(STREAMS):
-    streams[i].start()
+stream.start()
 
 kb = kbhit.KBHit()
 c = ' '
 
-frame = 0
-
 # tabla con ruido
 size = CHUNK//2  # variar size
 
-# escala diatónica
-escala = [(2 * np.random.randint(0, 2, int(size/2**(k/12))) - 1).astype(np.float32) for k in [0,2,3,5,7,8,10,12]]
-keyboard = "zxcvbnm"
+# escala diatónica (ABCDEFG)
+escala = [440, 493.88, 554.36, 587.33, 659.26, 739.99, 830.61]
+teclado = "zxcvbnm"
+notas = [] # lista de notas en reproduccion
 
-while c != 'q':  
+while c != 'q':
+    notaFinal = np.zeros(CHUNK)
+    notasRemove = []
+
+    for nota in notas:
+        newChunk, fin = nota.newChunk()
+        if fin:
+            notasRemove.append(nota)
+            newChunk = np.append(newChunk, np.zeros(CHUNK - newChunk.shape[0]))
+        notaFinal += newChunk
+
+    stream.write(np.float32(notaFinal))
+
+    for nota in notasRemove:
+        notas.remove(nota)
+
+    # INPUT
     if kb.kbhit():
         c = kb.getch()    
-        index = keyboard.find(c)
+        index = teclado.find(c) #obtenemos la nota en la escala
         if index != -1:
-            streams[index].write(karplus_strong(escala[index], 0.3*RATE))
+            notas.append(Nota(CHUNK, escala[index], 0.3*RATE))
+    
 
-for i in np.arange(STREAMS):
-    streams[i].stop()
+stream.stop()
