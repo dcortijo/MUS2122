@@ -50,7 +50,6 @@ while c != 'q':
         c = kb.getch()    
         index = teclado.find(c) #obtenemos la nota en la escala
         if index != -1:
-            notas.append(Nota(CHUNK, escala[index], 0.3*RATE))
-    
+            notas.append(Nota(CHUNK, escala[index], RATE))
 
 stream.stop()
