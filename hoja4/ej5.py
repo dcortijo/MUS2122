@@ -1,6 +1,7 @@
 # EJ5: PIANO POLIFÓNICO
 # Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 
+from sympy import maximum
 import kbhit, os
 import sounddevice as sd   # modulo de conexion con portAudio
 import numpy as np
@@ -33,12 +34,19 @@ while c != 'q':
     notaFinal = np.zeros(CHUNK)
     notasRemove = []
 
+    counter = 0 # Si no no se oye bien
+
     for nota in notas:
+
+        counter = counter + 1 # Si no no se oye bien
+
         newChunk, fin = nota.newChunk()
         if fin:
             notasRemove.append(nota)
             newChunk = np.append(newChunk, np.zeros(CHUNK - newChunk.shape[0]))
         notaFinal += newChunk
+    
+    if(counter > 0): notaFinal = notaFinal / counter # Si no no se oye bien
 
     stream.write(np.float32(notaFinal))
 
