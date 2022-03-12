@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.45/win64" 1646922915
+<REAPER_PROJECT 0.1 "6.51/win64" 1647080056
   <NOTES 0 2
   >
   RIPPLE 0
@@ -16,7 +16,7 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 0.75
+  CURSOR 0
   ZOOM 50.47430263272115 0 0
   VZOOMEX 8 0
   USE_REC_CFG 0
@@ -60,8 +60,8 @@
   GLOBAL_AUTO -1
   TEMPO 80 4 4
   PLAYRATE 1 0 0.25 4
-  SELECTION 0.46875 0
-  SELECTION2 0.46875 0
+  SELECTION 7.125 7.125
+  SELECTION2 7.125 7.125
   MASTERAUTOMODE 0
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
@@ -82,7 +82,7 @@
   >
   <TEMPOENVEX
     EGUID {0E9B4F27-171B-49F5-B55E-C501B40ED265}
-    ACT 1 -1
+    ACT 0 -1
     VIS 1 0 1
     LANEHEIGHT 0 0
     ARM 0
@@ -172,8 +172,8 @@
         <X 0 0 0 0 3 Piano
           /wNQaWFubw==
         >
-        e 8 90 4c 55
-        e 352 90 4c 00
+        E 8 90 4c 55
+        E 352 90 4c 00
         E 120 90 4c 3d
         E 360 90 4c 00
         E 135 90 4c 53
@@ -194,18 +194,96 @@
         E 236 90 4c 54
         E 5 90 4a 00
         E 1440 90 4c 00
-        E 23520 b0 7b 00
+        E 480 90 4d 44
+        E 446 80 4d 00
+        E 34 90 4d 51
+        E 455 80 4d 00
+        E 25 90 4d 46
+        E 429 80 4d 00
+        E 51 90 4d 41
+        E 446 80 4d 00
+        E 42 90 4d 3f
+        E 429 80 4d 00
+        E 43 90 4c 52
+        E 429 80 4c 00
+        E 51 90 4c 41
+        E 446 80 4c 00
+        E 34 90 4c 4a
+        E 455 80 4c 00
+        E 25 90 4c 4d
+        E 455 80 4c 00
+        E 42 90 4a 54
+        E 441 80 4a 00
+        E 39 90 4a 4b
+        E 184 80 4a 00
+        E 39 90 4a 51
+        E 197 80 4a 00
+        E 43 90 4c 4d
+        E 446 80 4c 00
+        E 34 90 4a 54
+        E 741 80 4a 00
+        E 219 90 4f 57
+        E 915 80 4f 00
+        E 53 90 4c 55
+        E 352 90 4c 00
+        E 120 90 4c 3d
+        E 360 90 4c 00
+        E 135 90 4c 53
+        E 825 90 4c 00
+        E 120 90 4c 4b
+        E 360 90 4c 00
+        E 120 90 4c 3f
+        E 360 90 4c 00
+        E 129 90 4c 4c
+        E 922 90 4c 00
+        E 30 90 4c 51
+        E 476 90 4c 00
+        E 0 90 4f 53
+        E 453 90 4f 00
+        E 31 90 48 4e
+        E 712 90 48 00
+        E 6 90 4a 48
+        E 236 90 4c 54
+        E 5 90 4a 00
+        E 1440 90 4c 00
+        E 480 90 4d 44
+        E 446 80 4d 00
+        E 34 90 4d 51
+        E 455 80 4d 00
+        E 25 90 4d 46
+        E 429 80 4d 00
+        E 51 90 4d 41
+        E 446 80 4d 00
+        E 42 90 4d 3f
+        E 429 80 4d 00
+        E 43 90 4c 52
+        E 429 80 4c 00
+        E 51 90 4c 41
+        E 446 80 4c 00
+        E 34 90 4c 4a
+        E 455 80 4c 00
+        E 47 90 4f 49
+        E 431 80 4f 00
+        E 41 90 4f 54
+        E 431 80 4f 00
+        E 63 90 4d 4b
+        E 427 80 4d 00
+        E 44 90 4a 47
+        E 438 80 4a 00
+        e 45 90 48 52
+        e 1842 80 48 00
+        E 56 b0 7b 00
         CCINTERP 32
         CHASE_CC_TAKEOFFS 1
         GUID {9DB5B8A4-6532-4C06-AC8F-9E08A18F1909}
         IGNTEMPO 0 120 4 4
         SRCCOLOR 1
         VELLANE -1 100 0
-        CFGEDITVIEW -445.212944 0.089063 48 12 0 -1 0 0 0 0.5
+        CFGEDITVIEW 11317.831198 0.089063 31 18 0 -1 0 0 0 0.5
         KEYSNAP 0
         TRACKSEL 0
         EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
-        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 0 43 849 437 0 0 0 0 0 0 0 1 0 0.5 0 0 1 64
+        CFGEDIT 1 1 0 1 0 0 1 1 1 0 1 0.25 665 248 1514 642 0 0 0 0 0 0 0 1 0 0.5 0 0 1 64
       >
     >
   >
