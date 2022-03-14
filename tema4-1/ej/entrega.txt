@@ -10,3 +10,6 @@ Trasteamos un poco con los parámetros de ReaDelay, y conseguimos distinguir los
 producían al reproducir la pista. Sin embargo, no conseguimos averiguar qué hacía Feedback.
 Probamos todos los parámetros de ReaEQ y ReaVerberate (se encuentran descativados en la entrega) 
 y gracias a la documentación conseguimos saber su efecto.
+
+Añadimos luego una track midi que usaba una batería, y le pusimos un ritmo simple como acompañamiento 
+a la track principal.
