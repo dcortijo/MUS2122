@@ -1,0 +1,12 @@
+Daniel Cortijo Gamboa & Tatiana Duarte Balvís
+
+Pudimos hacer la parte de la composición de Jingle Bells, que intentamos modificamar 
+ligeramente sin mucho éxito (ya que nuestro conocimiento de composición es nulo).
+
+Intentamos hacer el segundo apartado, pero nos fue imposible grabar algo adecuado con 
+el teclado virtual y el ratón. Optamos por intentarlo en el laboratorio con el teclado MIDI.
+
+Trasteamos un poco con los parámetros de ReaDelay, y conseguimos distinguir los cambios que 
+producían al reproducir la pista. Sin embargo, no conseguimos averiguar qué hacía Feedback.
+Probamos todos los parámetros de ReaEQ y ReaVerberate (se encuentran descativados en la entrega) 
+y gracias a la documentación conseguimos saber su efecto.

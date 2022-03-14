@@ -61,3 +61,7 @@ while c != 'q':
             notas.append(Nota(CHUNK, escala[index], RATE))
 
 stream.stop()
+
+# Tuvimos que dividir entre el numero de notas, ya que si no lo haciamos se oia
+# mal si juntabamos dos notas. No sabemos por que podria ser, si era porque superaba
+# un umbral de aplitud o algo similar, pero no conseguimos arreglarlo
