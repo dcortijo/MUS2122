@@ -34,19 +34,14 @@ while c != 'q':
     notaFinal = np.zeros(CHUNK)
     notasRemove = []
 
-    counter = 0 # Si no no se oye bien
-
     for nota in notas:
-
-        counter = counter + 1 # Si no no se oye bien
-
         newChunk, fin = nota.newChunk()
         if fin:
             notasRemove.append(nota)
             newChunk = np.append(newChunk, np.zeros(CHUNK - newChunk.shape[0]))
         notaFinal += newChunk
     
-    if(counter > 0): notaFinal = notaFinal / counter # Si no no se oye bien
+    notaFinal = notaFinal * 0.15 # Si no, no se oye bien
 
     stream.write(np.float32(notaFinal))
 
@@ -65,3 +60,6 @@ stream.stop()
 # Tuvimos que dividir entre el numero de notas, ya que si no lo haciamos se oia
 # mal si juntabamos dos notas. No sabemos por que podria ser, si era porque superaba
 # un umbral de aplitud o algo similar, pero no conseguimos arreglarlo
+# Probamos multiplicando por np.sqrt(2)/2 pero no arreglaba nada
+# Poniendo 0.15 se pueden tocar por lo menos 2 notas a la vez
+# Seguimos suponiendo que es por que super un umbral, pero no sabemos como arreglarlo 
