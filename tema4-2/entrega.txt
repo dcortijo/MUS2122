@@ -10,4 +10,4 @@ Hemos hecho todos los ejercicios sin problemas.
 -Eliminados los golpes de plato que se escuchan en las pistas de BackingVocals y modificados los platillos que suenan en la intro según se indica en el guión.
 -Añadidos golpes de bombo adicionales en la pista Kick en First Verse.
 -Añadido el limitador Master Limiter. Bajamos el threshold hasta que empieza a activarse solo de vez en cuando.
--Generado un .mp3 de la pisa final.
+-Generado un .mp3 de la pista final.

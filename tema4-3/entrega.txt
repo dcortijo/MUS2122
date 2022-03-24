@@ -1,0 +1,13 @@
+Daniel Cortijo Gamboa & Tatiana Duarte Balvís
+
+Hemos hecho todos los ejercicios sin problemas.
+-Creamos el proyecto según se explica en el apartado 1.
+-Importamos los ficheros en sus carpetas por instrumento (con paneo si era el caso).
+-Establecimos 4 regiones en la canción: Intro, First Verse, Solo y Last Verse.
+-Hicimos las correspondientes automatizaciones de volumen y paneo en la batería. No encontramos la manera de automatizar el paneo según la práctica, así que lo hicimos al igual que el volumen.
+-Añadimos un ecualizador lowpass a la pista del bajo. Por defecto viene con 4 puntos para las frecuencias, dejamos solo el punto 1 con un preset lowpass ligeramente modificado a nuestro gusto.
+-Añadido el efecto de eco a las pistas de LeadGuitar con automatización (ecos distintos para cada pista).
+-Eliminados los golpes de plato que se escuchan en las pistas de BackingVocals y modificados los platillos que suenan en la intro según se indica en el guión.
+-Añadidos golpes de bombo adicionales en la pista Kick en First Verse.
+-Añadido el limitador Master Limiter. Bajamos el threshold hasta que empieza a activarse solo de vez en cuando.
+-Generado un .mp3 de la pista final.
