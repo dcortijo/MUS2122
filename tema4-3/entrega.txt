@@ -8,8 +8,8 @@ expermientando con distintos presets de OrilRiver, hasta dar lñugar con Mega Ha
 -Copiamos el efecto de las pistas de LeadGuitar (al ser delays distintos hicimos una mezcla de ambos), y lo asignamos a la pista que recibe los envíos
 (Guitar Reverb), y automatizamos el volumen.
 -
--Seguimos los pasos del ejercicio para conseguir la armonía. Para que el delya fuera gradual, hicimos que se fuera bajando el dry y el wet fuera subiendo
-cuando queríamos que se fuera notando de manera creciente.
+-Seguimos los pasos del ejercicio para conseguir la armonía. Nos basamos en el preset de Cathedral 2 de OrilRiver, y para que fuera gradual, hicimos que se fuera 
+bajando el dry y el wet fuera subiendo cuando queríamos que se fuera notando de manera creciente.
 
 Hemos notado que al perder la carpeta de los plugins restea los plugins a sus configuraciones por defecto, así que puede que se oiga el .rpp distinto del archivo
 de audio.
