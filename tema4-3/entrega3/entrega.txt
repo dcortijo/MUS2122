@@ -1,0 +1,19 @@
+Daniel Cortijo Gamboa & Tatiana Duarte Balvís
+
+Hemos hecho todos los ejercicios sin problemas.
+-Vimos que estaba ligeramente desfasado, y tuvimos que moverlo a la derecha un poco, para que los golpes de bombo estuvieran al principio de un compás.
+-Creamos la pista Reverb Global, que recibía el sonido de las pistas indicadas. Hicimos que las que se notaban más tuvieran un volumen más bajo y estuvimos 
+expermientando con distintos presets de OrilRiver, hasta dar lugar con Mega Hall 2, que modifcamos ligeramente.
+-Seguimos los pasos de los vídeo haciendo una nueva pista (Ping Pong) para darle el efecto deseado a la pista Vocals.
+-Copiamos el efecto de las pistas de LeadGuitar (al ser delays distintos hicimos una mezcla de ambos), y lo asignamos a la pista que recibe los envíos
+(Guitar Reverb), y automatizamos el volumen.
+-Tuvimos una gran cantidad de dificultades a la hora de implementar este ejercicio (apartado 5): para empezar, fuimos incapaces de hacer que Reaper detectara los 
+instrumentos de Kontakt, por mucho que cambiáramos las preferencias. La creación de MIDIs fue bien. Al intentar poner samples en Sitala, vimos que si grabábamos 
+una sample de snare2, que se oye por la derecha, se oía en el reproductor de audio de Windows, pero Sitala lo detectaba como una pista en silencio por completo; 
+por ello, decidimos ahcer una pista con ambos snares juntos, que detectó bien. Al hacer el envío de las pistas con MIDI a Reverb Global no entendíamos como podíamos 
+hacer que Kick y Snare tuvieran un volumen distinto recibiendo la misma MIDI y con Sitiala ambos, así que decidimos ahcer una pista con ambos que enviamos a Reverb.
+-Seguimos los pasos del ejercicio para conseguir la armonía. Nos basamos en el preset de Cathedral 2 de OrilRiver, y para que fuera gradual, hicimos que se fuera 
+bajando el dry y el wet fuera subiendo cuando queríamos que se fuera notando de manera creciente.
+
+Hemos notado que al perder la carpeta de los plugins restea los plugins a sus configuraciones por defecto, así que puede que se oiga el .rpp distinto del archivo
+de audio. esto hemos comprobado que ocurre incluso en casa, ya que OrilRiver se pone en su preset por defecto cada vez que se abre el proyecto.

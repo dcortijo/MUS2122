@@ -1,0 +1,2 @@
+Como se especifica en entrega.txt, Sitala no detetcaba bien la sample de snare2 que se oía por la derecha.
+Hemos icnluido lo que serían las samples de snare 1 y 2, pero las usadas finalmente son kickSample y snareSample.
