@@ -7,3 +7,8 @@ Daniel Cortijo Gamboa & Tatiana Duarte Balvís
 	3. ReaComp y ReaEq a "Snare top"
 - En el bajo añadimos un compresor y un ecualizador de tipo Low Pass
 - Pista de Reverb Global que recibe audio de todas las demás pistas excepto del bajo, usando el plugin OrinRiver y el preset Studio A con Dry a -infinito y Wet a 0 para conseguir una pista solo de efecto
+- En la pista de voz añadimos una automatización a un reverb OrilRiver (con preset Vocal Hall). hicimos que automatización aumentara el Wet y disminuye ligeramente el Dry en los momentos en los que hay 
+una nota sostenida de manera prolongada (normalmente al final de cada frase, cuando dice Valentine o Stay) para que estas notas sonaran más como un eco.
+- Además, en la pista de voz añadimos otra automatización, esta vez del paneo. Hicimos que esta automatización ocurriera en zonas cercanas a la anterior, e hiciera que oscilara la voz rápidamente
+entre los canales derecho e izquierodo brevemente cuando se sostiene una nota, creando un efecto envolvente interesante.
+
