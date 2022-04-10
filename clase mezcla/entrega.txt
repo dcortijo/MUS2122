@@ -1,0 +1,9 @@
+Daniel Cortijo Gamboa & Tatiana Duarte Balvís
+
+- Ajustados volumenes de las pistas, añadidos paneados a la izquierda y derecha a las pistas L y R respectivamente y organizadas ciertas pistas por carpetas (Drums, OH, Loop y Piano) y con colores
+-En las pistas de batería seguimos las indicaciones de la clase del jueves y añadimos:
+	1. ReaGate a "Kick"
+	2. ReaEQ a "Snare bottom", "Snare top 2" (para eliminar los platillos) y "Hi hat"
+	3. ReaComp y ReaEq a "Snare top"
+- En el bajo añadimos un compresor y un ecualizador de tipo Low Pass
+- Pista de Reverb Global que recibe audio de todas las demás pistas excepto del bajo, usando el plugin OrinRiver y el preset Studio A con Dry a -infinito y Wet a 0 para conseguir una pista solo de efecto
