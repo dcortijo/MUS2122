@@ -4,7 +4,8 @@ Daniel Cortijo Gamboa
 Hicimos unas pistas ambientes con Pads en La Menor de Spitfire LABS (PONER PRESETS).
 Añadimos una pista de cuerda de 4 compases que se loopeaba.
 Añadimos una pista de percusión que acompañaba a los pads.
-Añadimos una pista con una progresión de caordes en tonalidad menor: i(La, Do, Mi), ii(Si, Re, Fa), iii(Do, Mi, Sol), ii(Si, Re, Fa). 
-Los acordes usados en el ejemplo:
+Añadimos una pista con una progresión de acordes en tonalidad menor: i(La, Do, Mi), ii(Si, Re, Fa), iii(Do, Mi, Sol), ii(Si, Re, Fa). 
+Los progresión de acordes en el ejemplo es de tríadas con notas añadidas: (La, La, Mi, La DO, Mi), (Do, Do, Sol, Do, Mi, Sol, Mi), (Re, Re, La, Re, Fa#, La, Re), (Fa, Fa, Do Fa La Re)
 Añadimos una pista de bajo que usaba la nota fundamental de cada acorde.
-Por último, BlueArp
+Por último, a través de BlueArp creamos uan secuencia en La menor que ampoaña la melodía de cuerda y la progresión de acordes
+Hemos usado los plugins BlueArp, Spitfire Labs (Percussion, Pads y Bass) y Celtic Folk Harp (Versilian Studios)
