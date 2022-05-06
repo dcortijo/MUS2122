@@ -6,7 +6,9 @@ using FMODUnity;
 public class Terrain : MonoBehaviour
 {
     [SerializeField] StudioEventEmitter addEmitter;    // Emisor de la melodía adicional, siempre activo pero con volumen modulado cuando no le conviene
+    [SerializeField] StudioEventEmitter playerEmitter;
     public float secondsToFade = 3;
+    public string playerVariable;    // Variable que va activar en el del player para activar un filtro, el del terreno como tal se activa con volumen
 
     private float currentVolume = 0;
 
@@ -15,6 +17,7 @@ public class Terrain : MonoBehaviour
     {
         addEmitter.Play();
         addEmitter.SetParameter("Volumen", currentVolume);
+        playerEmitter.SetParameter(playerVariable, currentVolume);
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class Terrain : MonoBehaviour
         currentVolume = Mathf.Max(currentVolume, 0);
         //Debug.Log(currentVolume);
         addEmitter.SetParameter("Volumen", currentVolume);
+        playerEmitter.SetParameter(playerVariable, currentVolume);
     }
 
     private void OnTriggerStay(Collider other)
