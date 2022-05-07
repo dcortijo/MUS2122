@@ -7,14 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     public int groundSpeed;
     public int airSpeed;
-    public int soundTransitionTime;
 
     [SerializeField] StudioEventEmitter baseEmitter;    // Emisor de la melodía base, siempre activo
 
     private void Start()
     {
         baseEmitter.Play();
-        //baseEmitter.SetParameter("Efficiency", Mathf.Clamp(GetComponent<Generator>().hp / GetComponent<Generator>().maxHp, 0, 0.99f));
     }
 
     private void FixedUpdate()

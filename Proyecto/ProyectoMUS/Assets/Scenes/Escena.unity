@@ -232,8 +232,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8860219, y: 1.3256392, z: 0.8889139}
-  m_Center: {x: -0.00009398461, y: 0.16281986, z: 0.001563549}
+  m_Size: {x: 0.8860219, y: 3.7468894, z: 0.8889139}
+  m_Center: {x: -0.00009398461, y: 1.3734454, z: 0.001563549}
 --- !u!114 &117689616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 117689617}
   playerEmitter: {fileID: 1864806814}
-  secondsToFade: 3
+  secondsToFade: 0.75
   playerVariable: DesertFilter
 --- !u!114 &117689617
 MonoBehaviour:
@@ -265,11 +265,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1340381806
+      Data2: 1119623208
+      Data3: -220786031
+      Data4: 868432204
+    Path: event:/Desierto
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -278,8 +278,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,8 +605,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8860219, y: 1.3256392, z: 0.8889139}
-  m_Center: {x: -0.00009398461, y: 0.16281986, z: 0.001563549}
+  m_Size: {x: 0.8860219, y: 3.7108457, z: 0.8889139}
+  m_Center: {x: -0.00009398461, y: 1.3554233, z: 0.001563549}
 --- !u!114 &1014654230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1014654231}
   playerEmitter: {fileID: 0}
-  secondsToFade: 3
+  secondsToFade: 0.75
   playerVariable: RuinsFilter
 --- !u!114 &1014654231
 MonoBehaviour:
@@ -638,11 +638,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1674614252
+      Data2: 1221079311
+      Data3: -512537451
+      Data4: 321944956
+    Path: event:/Templo
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -651,8 +651,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1079968194
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,8 +762,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8860219, y: 1.3256392, z: 0.8889139}
-  m_Center: {x: -0.00009398461, y: 0.16281986, z: 0.001563549}
+  m_Size: {x: 0.8860219, y: 3.8526208, z: 0.8889139}
+  m_Center: {x: -0.00009398461, y: 1.4263109, z: 0.001563549}
 --- !u!114 &1079968200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1079968201}
   playerEmitter: {fileID: 0}
-  secondsToFade: 3
+  secondsToFade: 0.75
   playerVariable: UnderwaterFilter
 --- !u!114 &1079968201
 MonoBehaviour:
@@ -795,11 +795,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 702036620
+      Data2: 1142399788
+      Data3: -155423593
+      Data4: -344858889
+    Path: event:/Agua
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -808,8 +808,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1232391307
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,8 +963,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8860219, y: 1.3256392, z: 0.8889139}
-  m_Center: {x: -0.00009398461, y: 0.16281986, z: 0.001563549}
+  m_Size: {x: 0.8860219, y: 4.240505, z: 0.8889139}
+  m_Center: {x: -0.00009398461, y: 1.6202521, z: 0.001563549}
 --- !u!114 &1463159515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1463159516}
   playerEmitter: {fileID: 0}
-  secondsToFade: 3
+  secondsToFade: 0.75
   playerVariable: SnowFilter
 --- !u!114 &1463159516
 MonoBehaviour:
@@ -996,11 +996,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1945851392
+      Data2: 1291704241
+      Data3: -1068519004
+      Data4: -1322730699
+    Path: event:/Nieve
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1009,8 +1009,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1543778975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundSpeed: 5
   airSpeed: 2
-  soundTransitionTime: 0
-  baseEmitter: {fileID: 0}
+  baseEmitter: {fileID: 1864806814}
 --- !u!54 &1864806813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1389,11 +1388,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1085560133
+      Data2: 1197499565
+      Data3: -474244161
+      Data4: -929213856
+    Path: event:/Melodia
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1402,8 +1401,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2102609444
 GameObject:
   m_ObjectHideFlags: 0
