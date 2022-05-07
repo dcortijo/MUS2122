@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{828e17a9-ec9e-4af9-961b-ea4a0006e9d3}">
 		<property name="name">
 			<value>Nieve</value>

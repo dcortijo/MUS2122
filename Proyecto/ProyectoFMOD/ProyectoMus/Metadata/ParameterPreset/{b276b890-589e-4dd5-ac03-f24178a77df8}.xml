@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b276b890-589e-4dd5-ac03-f24178a77df8}">
+		<property name="name">
+			<value>RuinsFilter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a7f646f1-50b3-4c7d-bd68-533e4dfb4599}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d97f5e54-5a3c-4e75-8ac5-f8c5112d771a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d97f5e54-5a3c-4e75-8ac5-f8c5112d771a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{46d629a7-1bd5-465e-86d5-7d38fee87f8c}">
+		<property name="name">
+			<value>DesertFilter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a7f646f1-50b3-4c7d-bd68-533e4dfb4599}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c31ab791-8211-4538-b50b-b19680720ef2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c31ab791-8211-4538-b50b-b19680720ef2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -7,7 +7,7 @@ public class Terrain : MonoBehaviour
 {
     [SerializeField] StudioEventEmitter addEmitter;    // Emisor de la melodía adicional, siempre activo pero con volumen modulado cuando no le conviene
     [SerializeField] StudioEventEmitter playerEmitter;
-    public float secondsToFade = 3;
+    public float secondsToFade = 0.75f;
     public string playerVariable;    // Variable que va activar en el del player para activar un filtro, el del terreno como tal se activa con volumen
 
     private float currentVolume = 0;
@@ -25,7 +25,6 @@ public class Terrain : MonoBehaviour
     {
         currentVolume -= (1 / secondsToFade) * Time.deltaTime;
         currentVolume = Mathf.Max(currentVolume, 0);
-        //Debug.Log(currentVolume);
         addEmitter.SetParameter("Volumen", currentVolume);
         playerEmitter.SetParameter(playerVariable, currentVolume);
     }
