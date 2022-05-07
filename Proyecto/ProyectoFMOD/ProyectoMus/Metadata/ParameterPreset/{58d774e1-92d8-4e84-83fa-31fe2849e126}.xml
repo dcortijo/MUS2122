@@ -16,16 +16,18 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>4</value>
+			<value>6</value>
 		</property>
 		<property name="enumerationLabels">
+			<value>start</value>
+			<value>melodia</value>
 			<value>desierto</value>
 			<value>nieve</value>
 			<value>agua</value>
 			<value>templo</value>
 		</property>
 		<property name="initialValue">
-			<value>0</value>
+			<value>2</value>
 		</property>
 	</object>
 </objects>
