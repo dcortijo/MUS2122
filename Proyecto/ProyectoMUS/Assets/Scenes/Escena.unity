@@ -265,10 +265,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1340381806
-      Data2: 1119623208
-      Data3: -220786031
-      Data4: 868432204
+      Data1: 1292783027
+      Data2: 1235937148
+      Data3: 69153937
+      Data4: -2098538937
     Path: event:/Desierto
   Event: 
   PlayEvent: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1014654231}
-  playerEmitter: {fileID: 0}
+  playerEmitter: {fileID: 1864806814}
   secondsToFade: 0.75
   playerVariable: RuinsFilter
 --- !u!114 &1014654231
@@ -638,10 +638,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1674614252
-      Data2: 1221079311
-      Data3: -512537451
-      Data4: 321944956
+      Data1: -1352999651
+      Data2: 1316299508
+      Data3: -782210652
+      Data4: -506378427
     Path: event:/Templo
   Event: 
   PlayEvent: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1079968201}
-  playerEmitter: {fileID: 0}
+  playerEmitter: {fileID: 1864806814}
   secondsToFade: 0.75
   playerVariable: UnderwaterFilter
 --- !u!114 &1079968201
@@ -795,10 +795,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 702036620
-      Data2: 1142399788
-      Data3: -155423593
-      Data4: -344858889
+      Data1: -732838965
+      Data2: 1333573183
+      Data3: -535221595
+      Data4: 113058695
     Path: event:/Agua
   Event: 
   PlayEvent: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addEmitter: {fileID: 1463159516}
-  playerEmitter: {fileID: 0}
+  playerEmitter: {fileID: 1864806814}
   secondsToFade: 0.75
   playerVariable: SnowFilter
 --- !u!114 &1463159516
@@ -996,10 +996,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1945851392
-      Data2: 1291704241
-      Data3: -1068519004
-      Data4: -1322730699
+      Data1: -770977560
+      Data2: 1075399386
+      Data3: 1905664393
+      Data4: 984556385
     Path: event:/Nieve
   Event: 
   PlayEvent: 0
@@ -1388,10 +1388,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1085560133
-      Data2: 1197499565
-      Data3: -474244161
-      Data4: -929213856
+      Data1: -1981607606
+      Data2: 1303493255
+      Data3: -82593110
+      Data4: -1329849941
     Path: event:/Melodia
   Event: 
   PlayEvent: 0

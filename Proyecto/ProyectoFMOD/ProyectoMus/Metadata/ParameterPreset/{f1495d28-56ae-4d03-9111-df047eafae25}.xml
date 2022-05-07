@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f1495d28-56ae-4d03-9111-df047eafae25}">
+		<property name="name">
+			<value>SnowFilter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a7f646f1-50b3-4c7d-bd68-533e4dfb4599}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2ada8a94-1146-4c2d-bd4b-54e16062d21a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2ada8a94-1146-4c2d-bd4b-54e16062d21a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
